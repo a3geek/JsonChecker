@@ -3,13 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class Example : MonoBehaviour
 {
     [SerializeField, TextArea]
     private string json = "";
+    [SerializeField]
+    private Text jsonText = null;
+    [SerializeField]
+    private Text resultText = null;
 
-    public List<string> fields;
 
     void Start()
     {
@@ -17,10 +21,8 @@ public class Example : MonoBehaviour
         deserializer.Deserialize(this.json);
 
         var fieldNames = new JsonChecker.FieldNames(typeof(RootObject));
-        this.fields = fieldNames.Fields;
 
-        fieldNames.Fields.ForEach(e => Debug.Log(e));
-        Debug.Log("");
+        var result = "";
         foreach (var e in deserializer.Elements)
         {
             var label = e.Register.Combine(e.Name, JsonChecker.Consts.Slash);
@@ -30,9 +32,11 @@ public class Example : MonoBehaviour
             var rich = isUnknown ?
                 $"<color=red>{log}</color>"
                 : log;
-            Debug.Log(rich);
-            //Debug.Log(e.Name + " : " + label + " :: " + e.Type + " => " + e.Value);
+            result += rich + "\n";
         }
+
+        this.jsonText.text = this.json;
+        this.resultText.text = result;
     }
 
     [Serializable]

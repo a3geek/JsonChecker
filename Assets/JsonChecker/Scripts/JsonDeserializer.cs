@@ -121,7 +121,7 @@ namespace JsonChecker
                 return val;
             }
 
-            val = "[" + val.TrimEnd(Consts.Separator) + "]";
+            val = "[" + val + "]";
             if (counter != 0)
             {
                 return val;

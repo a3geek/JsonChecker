@@ -50,12 +50,13 @@ namespace JsonChecker
                 return name;
             }
 
-            name = string.IsNullOrEmpty(name) ? this.register.Last() : name;
+            var isShift = string.IsNullOrEmpty(name);
+            name = isShift ? this.register.Last() : name;
             var builder = new StringBuilder(this.length + this.register.Count + name.Length);
 
-            foreach (var e in this.register)
+            for (var i = 0; i < this.register.Count - (isShift ? 1 : 0); i++)
             {
-                builder.Append(e).Append(separator);
+                builder.Append(this.register[i]).Append(separator);
             }
 
             builder.Append(name);

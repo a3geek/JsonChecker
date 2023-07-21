@@ -1,5 +1,6 @@
 {
   "value": 1.1,
+  "unknown_test": "unknown_test",
   "color_list_1": [ "red1", "green1", "blue1" ],
   "color_list_2": [ "green2", "blue2", "red2" ],
   "rect_test": {
