@@ -1,0 +1,53 @@
+{
+  "value": 1.1,
+  "color_list_1": [ "red1", "green1", "blue1" ],
+  "color_list_2": [ "green2", "blue2", "red2" ],
+  "rect_test": {
+    "height": 0.11,
+    "width": 0.22,
+    "x": 0.33,
+    "y": 0.44,
+    "index": 1
+  },
+  "color_test": {
+    "r": 250,
+    "g": 240,
+    "b": 230
+  },
+  "test_obj_array": [
+    {
+      "id": 0,
+      "info": {
+        "name": "test0",
+        "rate": 0.0
+      }
+    },
+    {
+      "id": 1,
+      "info": {
+        "name": "test1",
+        "rate": 1.1
+      }
+    }
+  ],
+  "rects": {
+    "color_test_in_rects": {
+      "b": 1,
+      "g": 2,
+      "r": 3
+    },
+    "one": {
+      "x": 0.3,
+      "y": 0.4,
+      "height": 0.1,
+      "width": 0.2
+    },
+    "two": {
+      "height": 0.5,
+      "width": 0.6,
+      "x": 0.7,
+      "y": 0.8
+    },
+    "count": 2
+  }
+}
