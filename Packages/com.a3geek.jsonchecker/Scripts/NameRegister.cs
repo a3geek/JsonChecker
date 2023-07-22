@@ -3,7 +3,6 @@ using System.Text;
 
 namespace JsonChecker
 {
-    using Extensions;
     using System.Linq;
 
     public class NameRegister

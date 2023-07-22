@@ -70,7 +70,8 @@ JSON
 }
 ````
 
-```` csharp
+Result
+````
 value => 1.1
 <color=red>unknown_test => unknown_test</color>
 color_list_1 => [red1,green1,blue1]
@@ -90,7 +91,96 @@ rects/two => 0.7,0.8,0.6,0.5
 rects/count => 2
 ````
 
+Class type for JSON serialization
+```` csharp
+[Serializable]
+public class RootObject
+{
+    public Rects rects;
+    public List<string> color_list_1;
+    public string[] color_list_2;
+    public RectTest rect_test;
+    public ColorTest color_test;
+    public TestObjArray[] test_obj_array;
+
+    [SerializeField]
+    private float value;
+}
+
+[Serializable]
+public class RectTest
+{
+    public int index;
+    public float height;
+    public float width;
+    public float x;
+    public float y;
+}
+
+public class ColorTest
+{
+    public int r;
+    public int g;
+
+    private int b;
+}
+
+[Serializable]
+public class TestObjArray
+{
+    public int id;
+    public Info info;
+}
+
+[Serializable]
+public class Info
+{
+    public string name;
+    public float rate;
+}
+
+[Serializable]
+public class Rects
+{
+    public ColorTestInRects color_test_in_rects;
+    public One one;
+    public Two two;
+    public int count;
+}
+
+[Serializable]
+public class ColorTestInRects
+{
+    public int r;
+    public int g;
+    public int b;
+}
+
+[Serializable]
+public class One
+{
+    public float x;
+    public float y;
+    public float height;
+    public float width;
+}
+
+[Serializable]
+public class Two
+{
+    public float height;
+    public float width;
+    public float x;
+    public float y;
+}
+````
+
 ## Usage
+Add the following address to UnityPackageManager gitURL.
+````
+https://github.com/a3geek/JsonChecker.git?path=Packages/com.a3geek.jsonchecker
+````
+
 Sample code
 ```` csharp
 using JsonChecker;

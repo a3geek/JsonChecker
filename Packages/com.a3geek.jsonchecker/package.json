@@ -1,0 +1,7 @@
+{
+    "name": "com.a3geek.jsonchecker",
+    "displayName": "JsonChecker",
+    "version": "1.0.0",
+    "description": "JsonChecker is a library for parsing JSON to obtain a list of the element names and values it contains."
+  }
+  

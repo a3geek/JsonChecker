@@ -50,7 +50,7 @@ namespace JsonChecker
 
             if (type.IsClassOrStruct(stringIsPrimitive: true))
             {
-                list.AddRange(Get(type,new NameRegister(nameRegister, field.Name)));
+                list.AddRange(Get(type, new NameRegister(nameRegister, field.Name)));
             }
             else
             {
