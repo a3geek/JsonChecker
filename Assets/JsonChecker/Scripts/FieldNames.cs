@@ -31,7 +31,6 @@ namespace JsonChecker
             }
             else if (IsContainsRectField(fields))
             {
-                fields.ForEach(e => UnityEngine.Debug.Log(e.Name));
                 list.Add(nameRegister.Combine(string.Empty, Consts.Slash));
             }
 
@@ -48,7 +47,6 @@ namespace JsonChecker
             var type = field.FieldType;
             type = type.IsArray ? type.GetElementType()
                     : (type.IsList() ? type.GetGenericArguments()[0] : type);
-            UnityEngine.Debug.Log(type + " : " + field.Name + " => " + nameRegister.Combine(field.Name, Consts.Slash));
 
             if (type.IsClassOrStruct(stringIsPrimitive: true))
             {
